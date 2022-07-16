@@ -1,6 +1,6 @@
 version: '3'
 services:
-  order-alert:
+  bybit-order-alert:
     image: haynesx10/bybit-order-alert:${TAG}
     container_name: bybit-order-alert
     command: >
