@@ -1,0 +1,15 @@
+version: '3'
+services:
+  order-alert:
+    image: haynesx10/bybit-order-alert:${TAG}
+    container_name: bybit-order-alert
+    command: >
+      sh -c "
+      python main.py"
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    env_file:
+      - ../env/bybit-order-alert.env
+
