@@ -36,26 +36,22 @@ def handle_order(msg):
     local_datetime_converted = utcTimestampDatetime.replace(tzinfo=pytz.utc)
     local_datetime_converted = local_datetime_converted.astimezone(local_timezone)
 
-    closeType = ""
 
+    if side == "Buy":
+        side == "Long"
+    else:
+        side == "Short"
+
+    orderID = orderID[-5:]
     
 
     if orderStatus != "Filled":
         return
-    
-    
-    if isClose:
-        closeType = "Closed"
-    else:
-        closeType = "Opened"
-
 
     telegramMessage = f"""
-Trade <b>{closeType}</b> at <b>${entryOrExit}</b>
-                    
-Side: <b>{side}</b>
-Reason: <b>{createType}</b>
-ID: <b>{orderID}</b>
+<b>Order: ${entryOrExit}</b>        
+Direction: {side}
+ID: {orderID}
 
 UK: {local_datetime_converted.day}/{local_datetime_converted.month}/{local_datetime_converted.year} | {local_datetime_converted.hour}:{local_datetime_converted.minute}:{local_datetime_converted.second}
 UTC: {utcTimestampDatetime.day}/{utcTimestampDatetime.month}/{utcTimestampDatetime.year} | {utcTimestampDatetime.hour}:{utcTimestampDatetime.minute}:{utcTimestampDatetime.second}

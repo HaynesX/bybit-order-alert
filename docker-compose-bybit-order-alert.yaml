@@ -5,7 +5,7 @@ services:
     container_name: bybit-order-alert
     command: >
       sh -c "
-      python main.py"
+      python -u main.py"
     ports:
       - 8000:8000
     expose:
