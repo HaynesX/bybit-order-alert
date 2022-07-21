@@ -77,8 +77,8 @@ def poll_bybit_stream():
         test=False,
         api_key=BYBIT_SECRET_KEY,
         api_secret=BYBIT_SECRET,
-        ping_interval=40,  # the default is 30
-        ping_timeout=20,  # the default is 10
+        ping_interval=30,  # the default is 30
+        ping_timeout=300,  # the default is 10
         domain="bybit"  # the default is "bybit"
         )
     
